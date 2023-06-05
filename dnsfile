@@ -8,23 +8,23 @@ $TTL 1W
         IN      NS      ns1.clustername.domain.name.
 ;
 ;
-ns1     IN      A       helper-ip
+ns1     IN      A       <helper-ip>
 ;
 ; The api points to the IP of your load balancer
-api             IN      A       api-ip
-api-int         IN      A       api-ip
+api             IN      A       <api-ip>
+api-int         IN      A       <api-ip>
 ;
 ; The wildcard also points to the load balancer
-*.apps          IN      A       apps-ip
+*.apps          IN      A       <apps-ip>
 ;
 ; Create entry for the bootstrap host
-;bootstrap       IN      A       bootstrap-ip
+;bootstrap       IN      A       <bootstrap-ip>
 ;
 ; Create entries for the master hosts
-master1         IN      A       master-node1-ip
-master2         IN      A       master-node2-ip
-master3         IN      A       master-node3-ip
+master1         IN      A       <master-node1-ip>
+master2         IN      A       <master-node2-ip>
+master3         IN      A       <master-node3-ip>
 ;  Create entries for the worker hosts
-worker1         IN      A       worker-node1-ip
-worker2         IN      A       worker-node2-ip
+worker1         IN      A       <worker-node1-ip>
+worker2         IN      A       <worker-node2-ip>
 ;EOF
