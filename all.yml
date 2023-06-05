@@ -1,0 +1,40 @@
+---
+# If only one network interface
+gateway: <gateway-ip>
+netmask: <netmask>
+# VMWare default ens192
+# KVM default ens3
+# Libvirt default enp1s0
+# Intel NUC default eno1
+interface: ens192
+
+dns:
+  - dns-server-ip
+  - dns-local-ip
+
+webserver_url: <helper-ip>
+webserver_port: 8080
+# Ignition subpath in http server (optionnal, defaults to nothing)
+webserver_ignition_path: /ignition
+# Path to download master ignition file will be
+# http://192.168.1.20:8080/ignition/master.ign
+
+# Drive to install RHCOS
+# Libvirt - can be vda
+install_drive: sda
+
+# Timeout for selection menu during first boot
+# '-1' for infinite timeout. Default '10'
+boot_timeout: 200
+
+# Chose the binary architecture
+# x86_64 or ppc64le
+arch: "x86_64"
+
+ocp_version: <your-ocp-version>
+iso_checksum: <your-iso-check-sum>
+#iso_checksum_ppc64: ----------------------------------------------------------------
+iso_name: rhcos-{{ ocp_version }}-x86_64-live.x86_64.iso
+#iso_name_ppc64: rhcos-{{ ocp_version }}-ppc64le-installer.ppc64le.iso
+rhcos_bios: rhcos-{{ ocp_version }}-x86_64-metal.x86_64.raw.gz
+...
