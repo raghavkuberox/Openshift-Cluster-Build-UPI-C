@@ -1,0 +1,29 @@
+---
+all:
+  children:
+    bootstrap:
+      hosts:
+        bootstrap.clustername.domain.name:
+          ipv4: <bootstrap-ip>
+
+    master:
+      hosts:
+        master1.clustername.domain.name:
+          ipv4: <master-node1-ip>
+
+        master2.clustername.domain.name:
+          ipv4: <master-node2-ip>
+
+        master3.clustername.domain.name:
+          ipv4: <master-node3-ip>
+
+    worker:
+      hosts:
+        worker1.rsocp.ocpztp.com:
+          ipv4: <worker-node1-ip>
+
+        rsworker2.rsocp.ocpztp.com:
+          ipv4: <worker-node2-ip>
+         #dhcp
+
+...
